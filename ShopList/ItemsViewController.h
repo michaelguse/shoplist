@@ -11,7 +11,7 @@
 @interface ItemsViewController : UITableViewController <UITextFieldDelegate>
 
 @property NSManagedObjectContext *managedObjectContext;
-
+// @property NSMutableArray *fetchedResultsObjects;
 @property IBOutlet UITextField *itemTextField;
 
 @end

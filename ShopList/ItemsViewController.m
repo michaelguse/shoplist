@@ -8,6 +8,7 @@
 
 #import "ItemsViewController.h"
 #import "Item.h"
+#import <Foundation/NSArray.h>
 
 
 @interface ItemsViewController () <NSFetchedResultsControllerDelegate>
@@ -37,7 +38,8 @@
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     self.fetchedResultsController.delegate = self;
     [self.fetchedResultsController performFetch:nil];
-
+    // self.fetchedResultsObjects = (NSMutableArray *)self.fetchedResultsController.fetchedObjects;
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -87,6 +89,17 @@
     
     cell.textLabel.text = item.text;
     cell.textLabel.textColor = [item isCompleted] ? [UIColor lightGrayColor] : [UIColor blackColor];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        //add code here for when you hit delete - THIS CODE GENERATES AN EXCEPTION
+        [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath] withRowAnimation:YES];
+        [(NSMutableArray *)self.fetchedResultsController.fetchedObjects removeObjectAtIndex:indexPath.row];
+        [tableView reloadData];
+    }
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate

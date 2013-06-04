@@ -12,12 +12,14 @@
 
 @dynamic text;
 @dynamic completedAt;
+@dynamic completed;
+
 
 - (BOOL)isCompleted {
-    return self.completedAt != nil;
+    return self.completed;
 }
 
-- (void)setCompleted:(BOOL)completed {
+- (void)setCompleted:(Boolean)completed {
     self.completedAt = completed ? [NSDate date] : nil;
 }
 

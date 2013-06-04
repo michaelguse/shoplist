@@ -31,8 +31,9 @@
     self.title = NSLocalizedString(@"ShopList", nil);
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Item"];
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"text" ascending:YES],
-                                     [NSSortDescriptor sortDescriptorWithKey:@"completedAt" ascending:YES]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"completed" ascending:YES],
+                                     [NSSortDescriptor sortDescriptorWithKey:@"text" ascending:YES]
+                                     ];
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     self.fetchedResultsController.delegate = self;
@@ -86,7 +87,7 @@
     Item *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     cell.textLabel.text = item.text;
-    cell.textLabel.textColor = [item isCompleted] ? [UIColor lightGrayColor] : [UIColor blackColor];
+    cell.textLabel.textColor = [item completed] ? [UIColor lightGrayColor] : [UIColor blackColor];
     
     // BackgroundColor only changes for cells that are in the visible part of the result set.
     // Once it scrolls down it loses the settings for it.
@@ -151,19 +152,20 @@
 }
 */
 
-
+/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        // Delete the row from the data source - Update the corresponding data-model array by either deleting the referenced item from the array or adding an item to the array.
+        // Delete the row from the data source - Update the corresponding data-model array by deleting the referenced item from the array.
         [self.managedObjectContext performBlock:^{
             Item *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
             [self.managedObjectContext deleteObject:item];
             [self.managedObjectContext save:nil];
+            [self.tableView reloadData];
         }];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert)
@@ -171,7 +173,7 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-
+*/
 
 /*
 // Override to support rearranging the table view.

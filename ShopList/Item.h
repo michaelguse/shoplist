@@ -12,7 +12,6 @@
 
 @property NSString *text;
 @property NSDate *completedAt;
-
-@property (nonatomic, getter = isCompleted) BOOL completed;
+@property Boolean completed;
 
 @end

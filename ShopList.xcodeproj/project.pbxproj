@@ -21,8 +21,8 @@
 		4CD2A6CB175D29EF00079BA8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD2A6CA175D29EF00079BA8 /* Default-568h@2x.png */; };
 		4CD2A6CF175D29F000079BA8 /* ShopList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2A6CD175D29F000079BA8 /* ShopList.xcdatamodeld */; };
 		4CD2A6D2175D29F000079BA8 /* ShopListIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2A6D1175D29F000079BA8 /* ShopListIncrementalStore.m */; };
-		4CD2A6E3175D488A00079BA8 /* ItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD2A6E2175D488900079BA8 /* ItemsViewController.xib */; };
-		4CD2A6E6175D49C400079BA8 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2A6E5175D49C400079BA8 /* ItemsViewController.m */; };
+		4CD2A6EA175D601500079BA8 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2A6E8175D601500079BA8 /* ItemsViewController.m */; };
+		4CD2A6EB175D601500079BA8 /* ItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD2A6E9175D601500079BA8 /* ItemsViewController.xib */; };
 		E16C3A92ED774E41A735127B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD58FF74C3C04B53B396D71E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,9 +47,9 @@
 		4CD2A6CE175D29F000079BA8 /* ShopList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShopList.xcdatamodel; sourceTree = "<group>"; };
 		4CD2A6D0175D29F000079BA8 /* ShopListIncrementalStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShopListIncrementalStore.h; path = Classes/ShopListIncrementalStore.h; sourceTree = "<group>"; };
 		4CD2A6D1175D29F000079BA8 /* ShopListIncrementalStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ShopListIncrementalStore.m; path = Classes/ShopListIncrementalStore.m; sourceTree = "<group>"; };
-		4CD2A6E2175D488900079BA8 /* ItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemsViewController.xib; sourceTree = "<group>"; };
-		4CD2A6E4175D49C300079BA8 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsViewController.h; path = Classes/ItemsViewController.h; sourceTree = "<group>"; };
-		4CD2A6E5175D49C400079BA8 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsViewController.m; path = Classes/ItemsViewController.m; sourceTree = "<group>"; };
+		4CD2A6E7175D601500079BA8 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
+		4CD2A6E8175D601500079BA8 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
+		4CD2A6E9175D601500079BA8 /* ItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemsViewController.xib; sourceTree = "<group>"; };
 		A148A3ABDA9C42E0AFCC72FE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		AD58FF74C3C04B53B396D71E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,9 +109,9 @@
 				4CD2A6B9175D29EF00079BA8 /* Networking */,
 				4CD2A6CC175D29F000079BA8 /* Models */,
 				4CD2A6B7175D29EF00079BA8 /* Supporting Files */,
-				4CD2A6E2175D488900079BA8 /* ItemsViewController.xib */,
-				4CD2A6E4175D49C300079BA8 /* ItemsViewController.h */,
-				4CD2A6E5175D49C400079BA8 /* ItemsViewController.m */,
+				4CD2A6E7175D601500079BA8 /* ItemsViewController.h */,
+				4CD2A6E8175D601500079BA8 /* ItemsViewController.m */,
+				4CD2A6E9175D601500079BA8 /* ItemsViewController.xib */,
 			);
 			path = ShopList;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 				4CD2A6C7175D29EF00079BA8 /* Default.png in Resources */,
 				4CD2A6C9175D29EF00079BA8 /* Default@2x.png in Resources */,
 				4CD2A6CB175D29EF00079BA8 /* Default-568h@2x.png in Resources */,
-				4CD2A6E3175D488A00079BA8 /* ItemsViewController.xib in Resources */,
+				4CD2A6EB175D601500079BA8 /* ItemsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +254,7 @@
 				4CD2A6C5175D29EF00079BA8 /* AppDelegate.m in Sources */,
 				4CD2A6CF175D29F000079BA8 /* ShopList.xcdatamodeld in Sources */,
 				4CD2A6D2175D29F000079BA8 /* ShopListIncrementalStore.m in Sources */,
-				4CD2A6E6175D49C400079BA8 /* ItemsViewController.m in Sources */,
+				4CD2A6EA175D601500079BA8 /* ItemsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

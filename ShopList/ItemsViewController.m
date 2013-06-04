@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     
-    // self.title = NSLocalizedString(@"ShopList", nil);
+    self.title = NSLocalizedString(@"ShopList", nil);
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Item"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"completedAt" ascending:NO]];

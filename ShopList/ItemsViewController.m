@@ -7,6 +7,8 @@
 //
 
 #import "ItemsViewController.h"
+#import "Item.h"
+
 
 @interface ItemsViewController () <NSFetchedResultsControllerDelegate>
 @property NSFetchedResultsController *fetchedResultsController;
@@ -53,14 +55,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
     return [sectionInfo numberOfObjects];
@@ -81,9 +81,12 @@
         return cell;
 }
     
-- (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-        NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        cell.textLabel.text = [managedObject valueForKey:@"text"];
+- (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Item *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    cell.textLabel.text = item.text;
+    cell.textLabel.textColor = [item isCompleted] ? [UIColor lightGrayColor] : [UIColor blackColor];
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate
@@ -177,13 +180,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [self.managedObjectContext performBlock:^{
+        Item *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        item.completed = !item.completed;
+        [self.managedObjectContext save:nil];
+    }];
+        
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

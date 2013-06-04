@@ -23,6 +23,7 @@
 		4CD2A6D2175D29F000079BA8 /* ShopListIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2A6D1175D29F000079BA8 /* ShopListIncrementalStore.m */; };
 		4CD2A6EA175D601500079BA8 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2A6E8175D601500079BA8 /* ItemsViewController.m */; };
 		4CD2A6EB175D601500079BA8 /* ItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD2A6E9175D601500079BA8 /* ItemsViewController.xib */; };
+		4CD2A6EE175D7B4500079BA8 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2A6ED175D7B4500079BA8 /* Item.m */; };
 		E16C3A92ED774E41A735127B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD58FF74C3C04B53B396D71E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,8 @@
 		4CD2A6E7175D601500079BA8 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
 		4CD2A6E8175D601500079BA8 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
 		4CD2A6E9175D601500079BA8 /* ItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemsViewController.xib; sourceTree = "<group>"; };
+		4CD2A6EC175D7B4500079BA8 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		4CD2A6ED175D7B4500079BA8 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		A148A3ABDA9C42E0AFCC72FE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		AD58FF74C3C04B53B396D71E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -112,6 +115,8 @@
 				4CD2A6E7175D601500079BA8 /* ItemsViewController.h */,
 				4CD2A6E8175D601500079BA8 /* ItemsViewController.m */,
 				4CD2A6E9175D601500079BA8 /* ItemsViewController.xib */,
+				4CD2A6EC175D7B4500079BA8 /* Item.h */,
+				4CD2A6ED175D7B4500079BA8 /* Item.m */,
 			);
 			path = ShopList;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				4CD2A6CF175D29F000079BA8 /* ShopList.xcdatamodeld in Sources */,
 				4CD2A6D2175D29F000079BA8 /* ShopListIncrementalStore.m in Sources */,
 				4CD2A6EA175D601500079BA8 /* ItemsViewController.m in Sources */,
+				4CD2A6EE175D7B4500079BA8 /* Item.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

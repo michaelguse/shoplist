@@ -12,4 +12,6 @@
 
 @property NSManagedObjectContext *managedObjectContext;
 
+@property IBOutlet UITextField *itemTextField;
+
 @end

@@ -33,7 +33,7 @@
 		4CD2A6AE175D29EF00079BA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4CD2A6B0175D29EF00079BA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4CD2A6B2175D29EF00079BA8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		4CD2A6B5175D29EF00079BA8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		4CD2A6B5175D29EF00079BA8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4CD2A6B8175D29EF00079BA8 /* ShopList-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShopList-Prefix.pch"; sourceTree = "<group>"; };
 		4CD2A6BA175D29EF00079BA8 /* ShopListAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShopListAPIClient.h; path = Classes/ShopListAPIClient.h; sourceTree = "<group>"; };
 		4CD2A6BB175D29EF00079BA8 /* ShopListAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ShopListAPIClient.m; path = Classes/ShopListAPIClient.m; sourceTree = "<group>"; };

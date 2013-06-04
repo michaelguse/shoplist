@@ -8,8 +8,6 @@
 
 #import "ItemsViewController.h"
 #import "Item.h"
-#import <Foundation/NSArray.h>
-
 
 @interface ItemsViewController () <NSFetchedResultsControllerDelegate>
 @property NSFetchedResultsController *fetchedResultsController;
@@ -33,12 +31,12 @@
     self.title = NSLocalizedString(@"ShopList", nil);
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Item"];
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"completedAt" ascending:NO]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"text" ascending:YES],
+                                     [NSSortDescriptor sortDescriptorWithKey:@"completedAt" ascending:YES]];
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     self.fetchedResultsController.delegate = self;
     [self.fetchedResultsController performFetch:nil];
-    // self.fetchedResultsObjects = (NSMutableArray *)self.fetchedResultsController.fetchedObjects;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -89,18 +87,12 @@
     
     cell.textLabel.text = item.text;
     cell.textLabel.textColor = [item isCompleted] ? [UIColor lightGrayColor] : [UIColor blackColor];
+    
+    // BackgroundColor only changes for cells that are in the visible part of the result set.
+    // Once it scrolls down it loses the settings for it.
+    // cell.backgroundColor = [item isCompleted] ? [UIColor yellowColor] : [UIColor whiteColor];
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        //add code here for when you hit delete - THIS CODE GENERATES AN EXCEPTION
-        [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath] withRowAnimation:YES];
-        [(NSMutableArray *)self.fetchedResultsController.fetchedObjects removeObjectAtIndex:indexPath.row];
-        [tableView reloadData];
-    }
-}
 
 #pragma mark - NSFetchedResultsControllerDelegate
 
@@ -159,19 +151,27 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        // Delete the row from the data source - Update the corresponding data-model array by either deleting the referenced item from the array or adding an item to the array.
+        [self.managedObjectContext performBlock:^{
+            Item *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            [self.managedObjectContext deleteObject:item];
+            [self.managedObjectContext save:nil];
+        }];
+        
     }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    else if (editingStyle == UITableViewCellEditingStyleInsert)
+    {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -215,7 +215,7 @@
         [self.managedObjectContext save:nil];
     }];
     
-    return YES;
+    return NO;
 }
 
 @end

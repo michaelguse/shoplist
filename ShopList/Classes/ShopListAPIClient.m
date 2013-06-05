@@ -1,7 +1,7 @@
 #import "ShopListAPIClient.h"
 #import "AFJSONRequestOperation.h"
 
-static NSString * const kShopListAPIBaseURLString = @"http://shielded-brushlands-4083.herokuapp.com";
+static NSString * const kShopListAPIBaseURLString = @"http://dry-ravine-1045.herokuapp.com/";
 
 @implementation ShopListAPIClient
 

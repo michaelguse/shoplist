@@ -28,7 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C360F1A175E9F76006F004A /* ShopList 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShopList 2.xcdatamodel"; sourceTree = "<group>"; };
+		4C360F1A175E9F76006F004A /* ShopList2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShopList2.xcdatamodel; sourceTree = "<group>"; };
 		4CD2A6A9175D29EF00079BA8 /* ShopList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD2A6AC175D29EF00079BA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4CD2A6AE175D29EF00079BA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -386,7 +386,7 @@
 		4CD2A6CD175D29F000079BA8 /* ShopList.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				4C360F1A175E9F76006F004A /* ShopList 2.xcdatamodel */,
+				4C360F1A175E9F76006F004A /* ShopList2.xcdatamodel */,
 				4CD2A6CE175D29F000079BA8 /* ShopList.xcdatamodel */,
 			);
 			currentVersion = 4CD2A6CE175D29F000079BA8 /* ShopList.xcdatamodel */;

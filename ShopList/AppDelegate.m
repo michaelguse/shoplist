@@ -91,7 +91,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
         return _managedObjectModel;
     }
     
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"ShopList" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"ShopList2" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     
     return _managedObjectModel;
@@ -107,7 +107,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     AFIncrementalStore *incrementalStore = (AFIncrementalStore *)[_persistentStoreCoordinator addPersistentStoreWithType:[ShopListIncrementalStore type] configuration:nil URL:nil options:nil error:nil];
     
     NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:@"ShopList.sqlite"];
+    NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:@"ShopList2.sqlite"];
     
     NSDictionary *options = @{
         NSInferMappingModelAutomaticallyOption : @(YES),

@@ -12,7 +12,7 @@
 }
 
 + (NSManagedObjectModel *)model {
-    return [[NSManagedObjectModel alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"ShopList" withExtension:@"xcdatamodeld"]];
+    return [[NSManagedObjectModel alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"ShopList 2" withExtension:@"xcdatamodeld"]];
 }
 
 - (id <AFIncrementalStoreHTTPClient>)HTTPClient {
